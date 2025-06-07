@@ -8,7 +8,7 @@ import {
   selectCampersIsLoadingMore,
 } from '../../redux/campers/selectors.js';
 import { changeFilter } from '../../redux/filters/slice.js';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, generatePath } from 'react-router-dom';
 import { pageLimit } from '../../core/constants/filterConstants.js';
 import { convertFilterToParams } from '../../core/utils/convertFilterToParams.js';
 import { AsideContainer } from '../../components/Container/Container.jsx';
@@ -23,7 +23,6 @@ import SimpleMessage from '../../components/SimpleMessage/SimpleMessage.jsx';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const location = useLocation();
   const [page, setPage] = useState(1);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -33,7 +32,7 @@ const CatalogPage = () => {
   const isLoading = useSelector(selectCampersIsLoading);
   const isLoadingMore = useSelector(selectCampersIsLoadingMore);
 
-  const hanldeApplyFilter = values => {
+  const handleApplyFilter = values => {
     dispatch(clearCampers());
     setPage(1);
     dispatch(changeFilter(values));
@@ -59,7 +58,8 @@ const CatalogPage = () => {
   };
 
   const showCamperDetails = id => {
-    navigate(`${id}/features`);
+    const path = generatePath('/catalog/:id/features', { id });
+    window.open(path, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -67,7 +67,7 @@ const CatalogPage = () => {
       <aside className={css.filtersContainer}>
         <FilterForm
           initialFilter={filter}
-          actionApplyFilter={hanldeApplyFilter}
+          actionApplyFilter={handleApplyFilter}
         />
       </aside>
       <main>

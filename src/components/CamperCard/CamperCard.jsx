@@ -23,7 +23,7 @@ const CamperCard = ({ camper, actionCamperDetails }) => {
   };
 
   const handleCamperDetails = () => {
-    window.open(`/catalog/${camper.id}/features`, '_blank', 'noopener,noreferrer');
+    actionCamperDetails?.(camper.id);
   };
 
   return (
