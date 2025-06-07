@@ -7,7 +7,7 @@ const ReviewerRating = ({ rating }) => {
   );
 
   const getStarIconPath = (isYellow) => {
-    return isYellow == 1
+    return isYellow === 1
       ? getIconPath('star_yellow')
       : getIconPath('star_grey');
   };

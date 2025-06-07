@@ -1,5 +1,5 @@
 import css from './FeaturesSection.module.css';
-import { useMyContext } from '../../components/MyContext/MyContext';
+import { useMyContext } from '../MyContext/MyContext.jsx';
 import FeatureItem from '../FeatureItem/FeatureItem';
 import CamperDetails from '../../core/utils/camperDetails';
 import SizedBox from '../SizedBox/SizedBox';

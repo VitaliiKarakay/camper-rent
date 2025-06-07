@@ -91,7 +91,7 @@ const CatalogPage = () => {
                 ))}
             </ul>
             <div className={css.loadMoreContainer}>
-              {campers?.total != 0 && campers?.total > pageLimit * page && (
+              {campers?.total !== 0 && campers?.total > pageLimit * page && (
                 <>
                   {isLoadingMore ? (
                     <Loader />
