@@ -9,7 +9,7 @@ const ReviewsSection = () => {
 
   return (
     <div className={css.reviewsContainer}>
-      {reviews.map(review => (
+      {reviews.map((review) => (
         <ReviewItem key={review.comment} review={review} />
       ))}
     </div>

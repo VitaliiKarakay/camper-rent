@@ -17,7 +17,7 @@ const CamperCard = ({ camper, actionCamperDetails }) => {
   const camperDetailsClass = new CamperDetails(camper);
   const features = camperDetailsClass.getAvailableFeatures();
 
-  const handleAddToFavourites = e => {
+  const handleAddToFavourites = (e) => {
     e.stopPropagation();
     dispatch(toggleFavourite(camper.id));
   };
@@ -38,7 +38,7 @@ const CamperCard = ({ camper, actionCamperDetails }) => {
           <h2>{camper.name}</h2>
           <div className={css.camperActions}>
             <CamperPrice>{camper.price}</CamperPrice>
-            <button onClick={e => handleAddToFavourites(e)}>
+            <button onClick={(e) => handleAddToFavourites(e)}>
               <img
                 src={
                   favourites.includes(Number(camper.id))
@@ -53,7 +53,7 @@ const CamperCard = ({ camper, actionCamperDetails }) => {
         <p className={css.camperDescription}>{camper.description}</p>
         {features && (
           <ul className={css.featuresList}>
-            {features.map(feature => (
+            {features.map((feature) => (
               <FeatureItem key={feature} feature={feature} />
             ))}
           </ul>

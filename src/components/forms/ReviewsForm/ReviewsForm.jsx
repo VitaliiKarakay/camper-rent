@@ -2,15 +2,15 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import css from './ReviewsForm.module.css';
 import { AccentButton } from '../../Button/Button';
-import DatePicker from "react-datepicker";
+import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const ReviewsForm = ({ submitReview }) => {
   const initialValues = {
-    name: "",
-    email: "",
+    name: '',
+    email: '',
     bookingDate: null,
-    comment: "",
+    comment: '',
   };
 
   const today = new Date();
@@ -18,16 +18,16 @@ const ReviewsForm = ({ submitReview }) => {
 
   const ReviewsSchema = Yup.object().shape({
     name: Yup.string()
-      .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Name is required!"),
+      .min(2, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Name is required!'),
     email: Yup.string()
-      .min(3, "Too Short!")
-      .email("Please, enter valid email!")
-      .required("Email is required!"),
+      .min(3, 'Too Short!')
+      .email('Please, enter valid email!')
+      .required('Email is required!'),
     bookingDate: Yup.date()
-      .min(today, "Date must be today or later!")
-      .required("Booking date is required!"),
+      .min(today, 'Date must be today or later!')
+      .required('Booking date is required!'),
     comment: Yup.string(),
   });
 
@@ -52,7 +52,7 @@ const ReviewsForm = ({ submitReview }) => {
 
           <DatePicker
             selected={values.bookingDate}
-            onChange={(date) => setFieldValue("bookingDate", date)}
+            onChange={(date) => setFieldValue('bookingDate', date)}
             placeholderText="Booking date*"
             dateFormat="yyyy-MM-dd"
             minDate={today}

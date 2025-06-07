@@ -13,7 +13,10 @@ const slice = createSlice({
       if (state.items.length === 0 || existingIndex === -1) {
         return { ...state, items: [...state.items, item] };
       } else {
-        return { ...state, items: state.items.filter(favId => favId !== item) };
+        return {
+          ...state,
+          items: state.items.filter((favId) => favId !== item),
+        };
       }
     },
   },

@@ -1,42 +1,42 @@
 .title {
-    color: var(--dark);
+  color: var(--dark);
 }
 
 .imageGallery {
-    display: flex;
-    flex-wrap: no-wrap;
-    gap: 48px;
-    margin-top: 28px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 48px;
+  margin-top: 28px;
 }
 
 .image {
-    width: 292px;
-    height: 312px;
-    object-fit: cover;
-    object-position: left;
-    border-radius: 10px;
+  width: 292px;
+  height: 312px;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 10px;
 }
 
 .description {
-    color: var(--text);
-    margin-top: 28px;
+  color: var(--text);
+  margin-top: 28px;
 }
 
 .aboutSection {
-    margin-top: 56px;
-    display: flex;
-    gap: 40px;
+  margin-top: 56px;
+  display: flex;
+  gap: 40px;
 }
 
 .formContainer {
-    flex: 1 1 0;
-    width: 0;
-    border: 1px solid var(--gray-light);
-    border-radius: 10px;
-    padding: 44px 52px;
+  flex: 1 1 0;
+  width: 0;
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  padding: 44px 52px;
 }
 
 .formSubtitle {
-    color: var(--gray);
-    margin-top: 8px;
+  color: var(--gray);
+  margin-top: 8px;
 }

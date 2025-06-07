@@ -20,7 +20,7 @@ const FilterForm = ({ initialFilter, actionApplyFilter }) => {
     location: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!'),
   });
 
-  const handleSubmit = values => {
+  const handleSubmit = (values) => {
     actionApplyFilter?.(values);
   };
 

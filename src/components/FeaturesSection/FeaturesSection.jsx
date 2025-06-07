@@ -14,7 +14,7 @@ const FeaturesSection = () => {
     <div className={css.featuresContainer}>
       {features && (
         <ul className={css.featuresList}>
-          {features.map(feature => (
+          {features.map((feature) => (
             <FeatureItem key={feature} feature={feature} isDarken={true} />
           ))}
         </ul>

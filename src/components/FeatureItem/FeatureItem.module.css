@@ -1,11 +1,11 @@
 .featureItem {
-    display: flex;
-    gap: 8px;
-    padding: 12px 18px;
-    border-radius: 100px;
+  display: flex;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 100px;
 }
 
 .featureName {
-    font-size: 16px;
-    font-weight: 500;
+  font-size: 16px;
+  font-weight: 500;
 }

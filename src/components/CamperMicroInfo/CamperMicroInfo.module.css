@@ -1,18 +1,18 @@
 .info {
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
 }
 
 .ratingIcon {
-    display: inline-block;
-    margin-right: 4px;
+  display: inline-block;
+  margin-right: 4px;
 }
 
 .rating {
-    margin-right: 16px;
+  margin-right: 16px;
 }
 
 .locationIcon {
-    margin-right: 4px;
+  margin-right: 4px;
 }

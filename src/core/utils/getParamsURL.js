@@ -6,7 +6,7 @@ export const getParamsURL = ({ searchParams }) => {
         key !== 'location' &&
         key !== 'type' &&
         key !== 'page' &&
-        key !== 'limit'
+        key !== 'limit',
     )
     .map(([key]) => key);
 

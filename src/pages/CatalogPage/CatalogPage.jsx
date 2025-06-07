@@ -32,7 +32,7 @@ const CatalogPage = () => {
   const isLoading = useSelector(selectCampersIsLoading);
   const isLoadingMore = useSelector(selectCampersIsLoadingMore);
 
-  const handleApplyFilter = values => {
+  const handleApplyFilter = (values) => {
     dispatch(clearCampers());
     setPage(1);
     dispatch(changeFilter(values));
@@ -43,7 +43,7 @@ const CatalogPage = () => {
     if (location.pathname.endsWith('catalog')) {
       const params = convertFilterToParams(filter);
       dispatch(
-        fetchFilteredCampers(`${params}&page=${page}&limit=${pageLimit}`)
+        fetchFilteredCampers(`${params}&page=${page}&limit=${pageLimit}`),
       );
     }
   }, [dispatch, filter, page, location.pathname]);
@@ -57,7 +57,7 @@ const CatalogPage = () => {
     setPage(page + 1);
   };
 
-  const showCamperDetails = id => {
+  const showCamperDetails = (id) => {
     const path = generatePath('/catalog/:id/features', { id });
     window.open(path, '_blank', 'noopener,noreferrer');
   };
@@ -82,7 +82,7 @@ const CatalogPage = () => {
             <ul className={css.cardsHolder}>
               {campers &&
                 campers.items &&
-                campers.items.map(camper => (
+                campers.items.map((camper) => (
                   <CamperCard
                     key={camper.id}
                     camper={camper}

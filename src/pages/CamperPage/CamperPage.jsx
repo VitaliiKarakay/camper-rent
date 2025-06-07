@@ -18,8 +18,8 @@ import CamperPrice from '../../components/CamperPrice/CamperPrice';
 import SizedBox from '../../components/SizedBox/SizedBox';
 import Loader from '../../components/Loader/Loader';
 import SimpleMessage from '../../components/SimpleMessage/SimpleMessage';
-import Zoom from "react-medium-image-zoom";
-import "react-medium-image-zoom/dist/styles.css";
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 const CamperPage = () => {
   const dispatch = useDispatch();
@@ -65,10 +65,9 @@ const CamperPage = () => {
           <CamperPrice>{camper.price}</CamperPrice>
           <ul className={css.imageGallery}>
             {camper?.gallery &&
-              camper.gallery.map(item => (
+              camper.gallery.map((item) => (
                 <li key={item.thumb}>
                   <Zoom>
-
                     <img
                       src={item.thumb}
                       alt="camper image"

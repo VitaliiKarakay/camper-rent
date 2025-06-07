@@ -1,7 +1,7 @@
-export const convertFilterToParams = filter => {
+export const convertFilterToParams = (filter) => {
   const { location, equipment, form } = filter;
   const equipmentValues = equipment
-    .map(item => {
+    .map((item) => {
       switch (item) {
         case 'automatic':
           return 'transmission=automatic';

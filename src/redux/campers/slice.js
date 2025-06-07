@@ -14,13 +14,13 @@ const slice = createSlice({
     error: null,
   },
   reducers: {
-    clearCampers: state => {
+    clearCampers: (state) => {
       state.data.items = [];
       state.data.total = 0;
     },
   },
-  extraReducers: builder => {
-    builder.addCase(fetchCamper.pending, state => {
+  extraReducers: (builder) => {
+    builder.addCase(fetchCamper.pending, (state) => {
       state.isLoading = true;
       state.error = false;
     });

@@ -5,19 +5,19 @@ import formatCamelCase from '../../core/utils/formatCamelCase';
 import getIconPath from '../../core/utils/getIconPath';
 
 const CheckBoxGroup = ({
-                         items,
-                         name,
-                         type = 'checkbox',
-                         values,
-                         setFieldValue,
-                       }) => {
-  const buildHolderClass = isActive => {
+  items,
+  name,
+  type = 'checkbox',
+  values,
+  setFieldValue,
+}) => {
+  const buildHolderClass = (isActive) => {
     return clsx(css.label, isActive && css.active);
   };
 
   return (
     <div className={css.switchHolder}>
-      {items.map(item => (
+      {items.map((item) => (
         <label
           key={item}
           className={buildHolderClass(values[name].includes(item))}
@@ -32,7 +32,7 @@ const CheckBoxGroup = ({
               const newValue =
                 type === 'checkbox'
                   ? values[name].includes(item)
-                    ? values[name].filter(e => e !== item)
+                    ? values[name].filter((e) => e !== item)
                     : [...values[name], item]
                   : [item];
               setFieldValue(name, newValue);

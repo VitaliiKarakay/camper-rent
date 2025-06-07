@@ -2,12 +2,20 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Layout from '../Layout/Layout.jsx';
 
-const HomePage = lazy(()=>import('../../pages/HomePage/HomePage.jsx'));
-const CatalogPage = lazy(()=>import('../../pages/CatalogPage/CatalogPage.jsx'));
-const CamperPage = lazy(()=>import('../../pages/CamperPage/CamperPage.jsx'));
-const ReviewsSection = lazy(()=>import('../ReviewsSection/ReviewsSection.jsx'));
-const FeaturesSection = lazy(()=>import('../FeaturesSection/FeaturesSection.jsx'));
-const NotFoundPage = lazy(()=>import('../../pages/NotFoundPage/NotFoundPage.jsx'));
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
+const CatalogPage = lazy(
+  () => import('../../pages/CatalogPage/CatalogPage.jsx'),
+);
+const CamperPage = lazy(() => import('../../pages/CamperPage/CamperPage.jsx'));
+const ReviewsSection = lazy(
+  () => import('../ReviewsSection/ReviewsSection.jsx'),
+);
+const FeaturesSection = lazy(
+  () => import('../FeaturesSection/FeaturesSection.jsx'),
+);
+const NotFoundPage = lazy(
+  () => import('../../pages/NotFoundPage/NotFoundPage.jsx'),
+);
 
 function App() {
   return (

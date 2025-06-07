@@ -2,11 +2,11 @@ import clsx from 'clsx';
 import css from './Button.module.css';
 
 export const Button = ({
-                         isAccent = false,
-                         action,
-                         type = 'button',
-                         children,
-                       }) => {
+  isAccent = false,
+  action,
+  type = 'button',
+  children,
+}) => {
   const buildButtonClass = () => {
     return clsx(css.button, isAccent && css.accent);
   };

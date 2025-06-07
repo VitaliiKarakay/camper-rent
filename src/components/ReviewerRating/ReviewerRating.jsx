@@ -3,10 +3,10 @@ import getIconPath from '../../core/utils/getIconPath';
 
 const ReviewerRating = ({ rating }) => {
   const ratingPattern = [0, 0, 0, 0, 0].map((_, index) =>
-    index + 1 <= Math.round(rating) ? 1 : 0
+    index + 1 <= Math.round(rating) ? 1 : 0,
   );
 
-  const getStarIconPath = isYellow => {
+  const getStarIconPath = (isYellow) => {
     return isYellow == 1
       ? getIconPath('star_yellow')
       : getIconPath('star_grey');

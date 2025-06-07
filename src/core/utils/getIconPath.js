@@ -42,7 +42,7 @@ const icons = {
   engine,
 };
 
-const getIconPath = name => {
+const getIconPath = (name) => {
   switch (name) {
     case 'manual':
       return icons['automatic'];

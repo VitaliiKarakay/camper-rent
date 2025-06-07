@@ -12,7 +12,7 @@ export const fetchCamper = createAsyncThunk(
     } catch (e) {
       return ThunkAPI.rejectWithValue(e);
     }
-  }
+  },
 );
 
 export const fetchFilteredCampers = createAsyncThunk(
@@ -24,5 +24,5 @@ export const fetchFilteredCampers = createAsyncThunk(
     } catch (e) {
       return ThunkAPI.rejectWithValue(e);
     }
-  }
+  },
 );

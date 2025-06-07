@@ -2,6 +2,7 @@
 
 :root {
   --white: #ffffff;
+  --light: #f9fafb;
   --inputs: #f7f7f7;
   --badges: #f2f4f7;
   --darken-badges: #eaecef;
@@ -12,6 +13,7 @@
   --gray: #6c717b;
   --text: #475467;
   --main: #101828;
+  --dark: #1a1a1a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
