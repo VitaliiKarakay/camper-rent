@@ -1,5 +1,5 @@
 const CatalogPage = () => {
-    return <p>Catalog Page</p>
-}
+  return <p>Catalog Page</p>;
+};
 
 export default CatalogPage;
