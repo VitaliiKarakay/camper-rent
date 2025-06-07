@@ -10,31 +10,24 @@ import {
   persistReducer,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import favoritesReducer from './favorites/slice.js';
+import favouritesReducer from './favourites/slice.js';
 import campersReducer from './campers/slice.js';
 import filtersReducer from './filters/slice.js';
 
 const persistFavoritesConfig = {
-  key: 'favorites',
+  key: 'favourites',
   storage,
   whitelist: ['items'],
 };
-
-const persistFiltersConfig = {
-  key: 'filters',
-  storage,
-  whitelist: ['params'],
-};
-
 const rootReducer = combineReducers({
-  favorites: persistReducer(persistFavoritesConfig, favoritesReducer),
+  favourites: persistReducer(persistFavoritesConfig, favouritesReducer),
   campers: campersReducer,
-  filters: persistReducer(persistFiltersConfig, filtersReducer),
+  filter: filtersReducer,
 });
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],

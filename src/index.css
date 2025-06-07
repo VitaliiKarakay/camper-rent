@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
-  --light: #fff;
-  --dark-light: #989898;
-  --gray: #808080;
-  --dark: #151515;
-  --accent: #4e75ff;
-  --accent-hover: #6c8cff;
+  --white: #ffffff;
+  --inputs: #f7f7f7;
+  --badges: #f2f4f7;
+  --darken-badges: #eaecef;
+  --gray-light: #dadde1;
+  --rating: #ffc531;
+  --button: #e44848;
+  --button-hover: #d84343;
+  --gray: #6c717b;
+  --text: #475467;
+  --main: #101828;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,13 +29,6 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
-}
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 h1,
@@ -55,4 +55,25 @@ li {
 img {
   display: block;
   max-width: 100%;
+}
+
+button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 24px;
 }

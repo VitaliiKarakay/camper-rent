@@ -4,17 +4,28 @@ import { fetchCamper, fetchFilteredCampers } from './operations.js';
 const slice = createSlice({
   name: 'campers',
   initialState: {
-    data: [],
+    data: {
+      items: [],
+      item: {},
+      total: 0,
+    },
     isLoading: false,
+    isLoadingMore: false,
     error: null,
   },
-  extraReducers: (builder) => {
-    builder.addCase(fetchCamper.pending, (state) => {
+  reducers: {
+    clearCampers: state => {
+      state.data.items = [];
+      state.data.total = 0;
+    },
+  },
+  extraReducers: builder => {
+    builder.addCase(fetchCamper.pending, state => {
       state.isLoading = true;
       state.error = false;
     });
     builder.addCase(fetchCamper.fulfilled, (state, action) => {
-      state.data = action.payload;
+      state.data.item = action.payload;
       state.isLoading = false;
       state.error = false;
     });
@@ -23,20 +34,33 @@ const slice = createSlice({
       state.error = action.payload;
     });
 
-    builder.addCase(fetchFilteredCampers.pending, (state) => {
-      state.isLoading = true;
-      state.error = false;
+    builder.addCase(fetchFilteredCampers.pending, (state, action) => {
+      if (action.meta.arg.includes('&page=1')) {
+        state.isLoading = true;
+      } else {
+        state.isLoadingMore = true;
+      }
+      (state.data.item = {}), (state.error = false);
     });
     builder.addCase(fetchFilteredCampers.fulfilled, (state, action) => {
-      state.data = action.payload;
+      if (action.meta.arg.includes('&page=1')) {
+        state.data.items = action.payload.items;
+      } else {
+        state.data.items.push(...action.payload.items);
+      }
+      state.data.total = action.payload.total;
       state.isLoading = false;
+      state.isLoadingMore = false;
       state.error = false;
     });
     builder.addCase(fetchFilteredCampers.rejected, (state, action) => {
       state.isLoading = false;
+      state.isLoadingMore = false;
       state.error = action.payload;
     });
   },
 });
+
+export const { clearCampers } = slice.actions;
 
 export default slice.reducer;
